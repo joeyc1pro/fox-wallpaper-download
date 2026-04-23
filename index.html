@@ -3,81 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fox Wallpaper Download</title>
+  <title>Fox Wallpaper 4K Download</title>
 
   <style>
+    :root {
+      --bg: #0b0b0f;
+      --card: rgba(25, 25, 30, 0.72);
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.7);
+      --accent: #ff3b3b;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: white;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
+      color: var(--text);
+      overflow: hidden;
+      background: var(--bg);
     }
 
-    h1 {
-      margin-bottom: 20px;
+    /* Dark blurred background */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("fox-wallpaper-4k-WITHUSAFLAG.jpg") center/cover no-repeat;
+      filter: blur(28px) brightness(0.25) saturate(1.2);
+      transform: scale(1.15);
+      z-index: -1;
+    }
+
+    .card {
+      width: 92%;
+      max-width: 950px;
+      background: var(--card);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      display: flex;
+      gap: 30px;
+      padding: 28px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.7);
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .preview {
-      max-width: 90%;
-      width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      margin-bottom: 25px;
+      width: 50%;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+
+    .content {
+      width: 50%;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 32px;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      opacity: var(--muted);
+      margin-bottom: 22px;
+      line-height: 1.5;
     }
 
     .btn {
       display: inline-block;
-      padding: 15px 25px;
-      background: #ff3b3b;
+      padding: 14px 22px;
+      background: var(--accent);
       color: white;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 10px;
+      border-radius: 12px;
       transition: 0.2s ease;
+      box-shadow: 0 10px 25px rgba(255,59,59,0.25);
     }
 
     .btn:hover {
       background: #ff1f1f;
-      transform: scale(1.05);
+      transform: translateY(-2px) scale(1.05);
     }
 
-    .subtext {
-      opacity: 0.7;
-      font-size: 14px;
-      margin-top: 10px;
+    .meta {
+      margin-top: 14px;
+      font-size: 12px;
+      opacity: 0.55;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .preview, .content {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Fox Wallpaper</h1>
+  <div class="card">
 
-  <!-- Preview Image -->
-  <img 
-    src="fox-wallpaper-4k-WITHUSAFLAG.jpg" 
-    alt="Fox Wallpaper Preview"
-    class="preview"
-  />
+    <!-- Preview -->
+    <img 
+      class="preview"
+      src="fox-wallpaper-4k-WITHUSAFLAG.jpg"
+      alt="Fox Wallpaper Preview"
+    />
 
-  <!-- Download Button -->
-  <a 
-    class="btn"
-    href="fox-wallpaper-4k-WITHUSAFLAG.jpg"
-    download
-  >
-    Download Original 4K Wallpaper
-  </a>
+    <!-- Content -->
+    <div class="content">
+      <h1>Fox Wallpaper 4K</h1>
+      <p>
+        High-resolution 4K wallpaper featuring a fox design.
+        Optimized for desktop backgrounds, gaming setups, and lock screens.
+      </p>
 
-  <div class="subtext">
-    High-resolution 4K wallpaper download
+      <a 
+        class="btn"
+        href="fox-wallpaper-4k-WITHUSAFLAG.jpg"
+        download
+      >
+        Download 4K Wallpaper
+      </a>
+
+      <div class="meta">
+        fox-wallpaper-4k-WITHUSAFLAG.jpg • 4K Ultra HD
+      </div>
+    </div>
+
   </div>
 
 </body>
